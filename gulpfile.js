@@ -58,7 +58,10 @@ gulp.task('watch', function() {
   gulp.watch('app/dev/sass/*.scss', ['sass']);
 });
 
-
+//--default task ($ gulp)
+gulp.task('default', ['html', 'sass', 'watch'], function() {
+	console.log("...up to date")
+});
 
 
 
