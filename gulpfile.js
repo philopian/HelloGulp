@@ -6,7 +6,7 @@ var minifyHTML 		= require('gulp-minify-html');
 var sass 			= require('gulp-sass');
 var minifycss 		= require('gulp-minify-css');
 var autoprefixer 	= require('gulp-autoprefixer');
-
+var jshint 			= require('gulp-jshint');
 
 
 
@@ -29,3 +29,20 @@ gulp.task('sass', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('app/production/css/'));
 });
+
+
+
+//--JavaScript-----
+// JS hint task
+gulp.task('jshint', function() {
+  gulp.src('./app/dev/scripts/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+
+
+
+
+
+
